@@ -1,0 +1,261 @@
+:root {
+  --color-hover: #d1d1d1;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  /* Prevent horizontal scrollbar */
+}
+
+body {
+  font-family: Verdana, sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+  letter-spacing: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: normal;
+  min-height: 100vh;
+  background-color: white;
+  margin: 0;
+}
+
+nav {
+  font-family: Verdana, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  background-color: white;
+  padding: 1% 2%;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  /* Ensure it is above other content */
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+li {
+  margin-right: 20px;
+}
+
+.ai {
+  text-decoration: none;
+  color: black;
+  padding: 10px 15px;
+  display: block;
+  margin-left: 1%;
+}
+
+a:hover {
+  background-color: var(--color-hover);
+}
+
+/*end of nav*/
+b {
+  font-weight: 2000;
+}
+
+.img3 {
+  max-width: 100%;
+  height: auto;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  padding: 10px 8px;
+}
+
+.image-container img {
+  display: block;
+}
+
+.caption-home {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+p {
+  display: block;
+  margin: 1em 2%;
+  unicode-bidi: isolate;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
+  margin: 10px 0px;
+}
+
+.spanc {
+  background-color: black;
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+  opacity: 0.75;
+  padding: 8px 16px;
+}
+
+/*end of home*/
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-width: 1500px;
+  padding: 7px 0;
+}
+
+.image-grid img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;/* Ensures the image covers the grid cell */
+  border-radius: 8px;
+}
+
+.image-containers {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.image-containers img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.captions {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+hr {
+  opacity: 0.2;
+}
+
+.projects>h3,
+.about>h3,
+.contact>h3 {
+  letter-spacing: 1px;
+  padding-left: 3%;
+  font-size: 30px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+/*end of project*/
+p {
+  font-size: 15px;
+  margin: 0 2%;
+  letter-spacing: 1px;
+}
+
+.card-container {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 100%;
+  overflow-x: hidden;
+  padding: 30px 15px;
+  box-sizing: border-box;
+}
+
+.card {
+  width: 360px;
+  background-color: #fff;
+  margin: 5px;
+}
+
+.card-content.p {
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  padding: 4% 47%;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--color-hover);
+}
+
+.card-content-h3 {
+  letter-spacing: 1px;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+/*end of about*/
+input {
+  padding: 13px 10px;
+  display: block;
+  border: 1px solid #ccc;
+  width: 95%;
+  margin: 15px 2.5%;
+  box-sizing: border-box;
+}
+
+.contact-button {
+  margin: 20px 2.5%;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  display: inline-block;
+  padding: 10px 20px;
+  text-align: center;
+  cursor: pointer;/*ship of mouse*/
+}
+
+.contact>p {
+  padding-left: 1%;
+}
+
+/*end of contact*/
+.last-img {
+  padding: 10px 8px;
+  width: 100%;
+  height: auto;
+}
+
+footer {
+  color: #fff;
+  background-color: #000;
+  padding: 35px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
