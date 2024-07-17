@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your GPA</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @media (max-width: 640px) {
+            .max-width-md {
+                max-width: 90%;
+            }
+        }
+    </style>
+    <script>
+        function evaluateScore() {
+            const scoreInput = document.getElementById('score').value;
+            const score = parseFloat(scoreInput);
+            let message;
+
+            if (isNaN(score)) {
+                message = "Not a Number";
+            } else if (score > 100 || score < 0) {
+                message = "Invalid Score";
+            } else if (score === 100) {
+                message = "Perfect Score";
+            } else if (score >= 85 && score < 100) {
+                message = "You got an A";
+            } else if (score >= 75 && score < 85) {
+                message = "You got a B";
+            } else if (score >= 65 && score < 75) {
+                message = "You got a C";
+            } else if (score >= 50 && score < 65) {
+                message = "You got a D";
+            } else if (score >= 0 && score < 50) {
+                message = "You got an F";
+            }
+
+            document.getElementById('result').innerText = message;
+        }
+    </script>
+</head>
+
+<body class="bg-pink-300 text-white flex items-center justify-center min-h-screen">
+
+    <div class="bg-pink-500 p-8 rounded-lg shadow-lg w-full max-w-md mx-auto max-width-md">
+        <header class="mb-6 text-center">
+            <h1 class="text-3xl font-bold">Enter Your Score</h1>
+        </header>
+        <div class="mb-4 pt-9 pb-6">
+            <input type="text" id="score" name="score"
+                class="mt-1 p-2 block w-full bg-white border border-pink-600 rounded-md text-pink-600 text-base font-semibold focus:outline-none focus:ring-2 focus:ring-pink-900">
+        </div>
+        <div class="text-center">
+            <button onclick="evaluateScore()" type="button"
+                class="cursor-pointer mt-4 px-4 py-2 bg-pink-300 text-white rounded-md hover:bg-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-900">Submit</button>
+        </div>
+        <p id="result" class="text-white text-center pt-9 block text-lg font-bold"></p>
+    </div>
+
+</body>
+
+</html>
