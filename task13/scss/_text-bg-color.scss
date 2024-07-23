@@ -1,0 +1,124 @@
+@import '_mixins';
+@import '_variables';
+
+//text
+.text-primary {
+    @include set-color(color, $primary-color);
+}
+
+.text-secondary {
+    @include set-color(color, $secondary-color);
+}
+
+.text-success {
+    @include set-color(color, $success-color);
+}
+
+.text-danger {
+    @include set-color(color, $danger-color);
+}
+
+.text-warning {
+    @include set-color(color, $warning-color);
+}
+
+.text-info {
+    @include set-color(color, $info-color);
+}
+
+.text-light {
+    @include set-color(color, $light-color);
+}
+
+.text-dark {
+    @include set-color(color, $dark-color);
+}
+
+.text-pink-400 {
+    @include set-color(color, $pink-400);
+}
+
+.text-pink-500 {
+    @include set-color(color, $pink-500);
+}
+
+.text-blue-500 {
+    @include set-color(color, $blue-500);
+}
+
+.text-blue-700 {
+    @include set-color(color, $blue-700);
+}
+
+.text-purple-400 {
+    @include set-color(color, $purple-400);
+}
+
+.text-purple-600 {
+    @include set-color(color, $purple-600);
+}
+
+.text-purple-800 {
+    @include set-color(color, $purple-800);
+}
+
+.text-yellow-color {
+    @include set-color(color, $yellow-color);
+}
+
+.text-gray-color {
+    @include set-color(color, $gray-color);
+}
+
+.text-muted-color {
+    @include set-color(color, $muted-color);
+}
+
+//bg
+.bg-primary {
+    @include set-color(background-color, $primary-color);
+}
+
+.bg-secondary {
+    @include set-color(background-color, $secondary-color);
+}
+
+.bg-success {
+    @include set-color(background-color, $success-color);
+}
+
+.bg-danger {
+    @include set-color(background-color, $danger-color);
+}
+
+.bg-warning {
+    @include set-color(background-color, $warning-color);
+}
+
+.bg-info {
+    @include set-color(background-color, $info-color);
+}
+
+.bg-light {
+    @include set-color(background-color, $light-color);
+}
+
+.bg-dark {
+    @include set-color(background-color, $dark-color);
+}
+
+.bg-pink-500 {
+    @include set-color(background-color, $pink-500);
+}
+
+.bg-blue-700 {
+    @include set-color(background-color, $blue-700);
+}
+
+.bg-purple-500 {
+    @include set-color(background-color, $purple-500);
+}
+
+.bg-purple-400 {
+    @include set-color(background-color, $purple-400);
+}

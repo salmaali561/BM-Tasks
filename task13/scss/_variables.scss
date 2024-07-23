@@ -1,0 +1,86 @@
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$success-color: #28a745;
+$danger-color: #dc3545;
+$warning-color: #ffc107;
+$info-color: #17a2b8;
+$light-color: #f8f9fa;
+$dark-color: #343a40;
+$white-color: #ffffff;
+$black-color: #000000;
+$body-bg-color: #f4f4f4;
+$body-font-color: #212529;
+$muted-color: #6c757d;
+$gray-dark-color: #343a40;
+$gray-color: #6c757d;
+$gray-light-color: #f8f9fa;
+$blue-color: #007bff;
+$indigo-color: #6610f2;
+$purple-color: #6f42c1;
+$pink-color: #e83e8c;
+$red-color: #dc3545;
+$orange-color: #fd7e14;
+$yellow-color: #ffc107;
+$green-color: #28a745;
+$teal-color: #20c997;
+$cyan-color: #17a2b8;
+$dark-bg-color: #343a40;
+$bink-color-500: #74073aa8;
+$pink-50: #ffe3e3;
+$pink-100: #ffbdbd;
+$pink-200: #ff9b9b;
+$pink-300: #f86a6a;
+$pink-400: #ef4e4e;
+$pink-500: #e12d39;
+$pink-600: #cf1124;
+$pink-700: #ab091e;
+$pink-800: #8a041a;
+$pink-900: #610316;
+$blue-50: #ebf8ff;
+$blue-100: #bee3f8;
+$blue-200: #90cdf4;
+$blue-300: #63b3ed;
+$blue-400: #4299e1;
+$blue-500: #3182ce;
+$blue-600: #2b6cb0;
+$blue-700: #2c5282;
+$blue-800: #2a4365;
+$blue-900: #1a365d;
+$purple-50: #f5f3ff;
+$purple-100: #e0d7ff;
+$purple-200: #cbbaf7;
+$purple-300: #b399f2;
+$purple-400: #9678f2;
+$purple-500: #7c4dff;
+$purple-600: #673ab7;
+$purple-700: #512da8;
+$purple-800: #4527a0;
+$purple-900: #311b92;
+//
+$font-size-small: 0.875rem; // 14px
+$font-size-medium: 1rem; // 16px
+$font-size-large: 1.25rem; // 20px
+$font-size-xlarge: 1.5rem; // 24px
+$font-size-xxlarge: 2rem; // 32px
+//
+
+$grid-columns: 12; 
+$gutter-width: 16px; 
+
+// Calculate column width and gutter
+$column-width: (
+    100% / $grid-columns
+);
+$container-padding: $gutter-width * 2;
+///
+$breakpoints: (
+  small: 576px,
+  medium: 768px,
+  large: 992px,
+  xlarge: 1200px
+);
+
+$gutter-width: 16px;
+$card-padding: 16px;
+$card-border-radius: 8px;
+$card-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

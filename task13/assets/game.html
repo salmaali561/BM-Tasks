@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        .card {
+            width: 100px;
+            height: 150px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .card-body {
+            padding: 10px;
+        }
+        .card-title {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .card-text {
+            font-size: 14px;
+        }
+        .flip {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Memory Game</h1>
+                <button id="reset-button" class="btn btn-primary">Reset Game</button>
+                <p id="result-message"></p>
+            </div>
+        </div>
+        <div class="row" id="card-grid">
+            <!-- cards will be generated here -->
+        </div>
+    </div>
+
+    <script>
+        const images = [
+            'assets/191975_1713777147_9bddfbd0-00c3-4715-8181-a9000f7bf0a5_1080x_auto_none.jpg',
+            'assets/191975_1715881720_9c0efc0a-d427-4933-bc04-ba63b9730a78_1080x_auto_none.jpg',
+            'assets/191975_1715881535_9c0efaf0-65e2-4cba-8e38-81b10ea81274_1080x_auto_none.jpg',
+            'assets/191975_1715881287_9c0ef976-49e6-40f1-95f7-e30946892bee_1080x_auto_none.jpg',
+            'assets/191975_1715880173_9c0ef2d2-3dbb-48d0-ba30-e914eb8916af_1080x_auto_none.jpg',
+            'assets/191975_1715879809_9c0ef0a6-eca5-4ae3-bc78-87cb2253f6c8_1080x_auto_none.jpg',
+            'assets/191975_1715789087_9c0cd3e7-c652-4d42-9d31-12fb406749df_1080x_auto_none (1).jpg',
+            'assets/191975_1713777147_9bddfbd0-00c3-4715-8181-a9000f7bf0a5_1080x_auto_none.jpg',
+        ];
+
+        const duplicatedImages = images.concat(images);
+
+        let shuffledImages = duplicatedImages.sort(() => Math.random() - 0.5);
+
+        let cards = [];
+
+        shuffledImages.forEach((image, index) => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+        <img src="${`./assets/${image}`}" alt="Image ${index}">
+        <div class="card-body">
+            <h5 class="card-title">Image ${index}</h5>
+        </div>
+    `;
+    cards.push(card);
+    document.getElementById('card-grid').appendChild(card);
+});
+
+        let flippedCards = [];
+        let timer = null;
+
+        cards.forEach((card) => {
+            card.addEventListener('click', () => {
+                if (flippedCards.length < 2) {
+                    card.classList.add('flip');
+                    flippedCards.push(card);
+                    if (flippedCards.length === 2) {
+                        setTimeout(() => {
+                            if (flippedCards[0].querySelector('img').src === flippedCards[1].querySelector('img').src) {
+                                flippedCards.forEach((card) => {
+                                    card.style.visibility = 'hidden';
+                                });
+                            } else {
+                                flippedCards.forEach((card) => {
+                                    card.classList.remove('flip');
+                                });
+                            }
+                            flippedCards = [];
+                        }, 500);
+                    }
+                }
+            });
+        });
+
+        document.getElementById('reset-button').addEventListener('click', () => {
+            shuffledImages = duplicatedImages.sort(() => Math.random() - 0.5);
+            cards.forEach((card) => {
+                card.style.visibility = 'visible';
+                card.classList.remove('flip');
+            });
+            flippedCards = [];
+        });
+
+        let win = false;
+
+        setInterval(() => {
+            if (cards.every((card) => card.style.visibility === 'hidden')) {
+                win = true;
+                document.getElementById('result-message').innerHTML = 'You win!';
+            } else if (flippedCards.length > 0) {
+                flippedCards.forEach((card) => {
+                    card.classList.remove('flip');
+                });
+                flippedCards = [];
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

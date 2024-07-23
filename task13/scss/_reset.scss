@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a{
+    text-decoration: none;
+    border: none;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+.list-style-none {
+  list-style: none !important;
+}
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+button{
+    cursor: pointer;
+    border: none;
+}

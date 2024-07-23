@@ -1,0 +1,102 @@
+@import '_variables';
+
+  /* Centering */
+@mixin center-absolute($top: 50%, $left: 50%) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    transform: translate(-50%, -50%);
+  }
+  /*links*/
+  @mixin link($color){
+    color: $light-color;
+    background-color: $color;
+    &:hover{ transform: scale(0.5);
+  }}
+  /*colors*/
+  @mixin set-color($property, $color) {
+    #{$property}: $color ;
+  }
+  /*spacing*/
+  @mixin spacing($property, $size) {
+    #{$property}: $size ;
+  }
+  /*font size*/
+@mixin font-size($size) {
+    font-size: $size;
+  }
+  // responsive fontsize
+
+@mixin responsive-font-size($size-small, $size-large) {
+    font-size: $size-small;
+  
+    @media (min-width: 768px) {
+      font-size: $size-large;
+    }
+  }
+  /* Widths */
+@mixin width-utility($widths) {
+    @each $size, $value in $widths {
+      .w-#{$size} { width: $value !important; }
+    }
+  }
+  
+  @include width-utility((
+    10:10%
+    20:20%,
+    25: 25%,
+    30: 30%,
+    50: 50%,
+    60: 60%,
+    65:65%,
+    75: 75%,
+    100: 100%
+  ));
+  
+  /* Heights */
+  @mixin height-utility($heights) {
+    @each $size, $value in $heights {
+      .h-#{$size} { height: $value !important; }
+    }
+  }
+  
+  @include height-utility((
+    10:10%
+    20:20%,
+    25: 25%,
+    30: 30%,
+    50: 50%,
+    60: 60%,
+    65:65%,
+    75: 75%,
+    100: 100%
+  ));
+  //
+
+@mixin container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $container-padding;
+  }
+  
+  @mixin row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -($gutter-width / 2);
+  }
+  
+  @mixin col($size) {
+    flex: 0 0 ($size / $grid-columns * 100%);
+    max-width: ($size / $grid-columns * 100%);
+    padding: 0 ($gutter-width / 2);
+  }
+  /* Responsive Breakpoints */
+  @mixin respond-to($breakpoint) {
+    $width: map-get($breakpoints, $breakpoint);
+    @media (min-width: $width) {
+      @content;
+    }
+  }
+  
+  
