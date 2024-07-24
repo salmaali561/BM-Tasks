@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="store.css">
+    <script src="pstore.js" defer></script>
+</head>
+
+<body>
+    <header class="container-fluid py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="search" id="search-input" placeholder="Search by product name" class="form-control">
+                </div>
+                <div class="col-md-4">
+                    <select id="filter-select" class="form-select">
+                        <option value="all">All Categories</option>
+                        <option value="fragrances">fragrances</option>
+                        <option value="groceries">groceries</option>
+                        <option value="furniture">furniture</option>
+                        <option value="beauty">cosmatics</option>
+                    </select>
+                </div>
+                <div class="col-md-4 text-end">
+                    <button id="sort-button" class="btn btn-secondary">Sort by Price</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="container py-3">
+        <section id="products-section" class="row">
+        </section>
+        <section id="cart-section" class="row">
+            <h2 class="col-12">Cart</h2>
+            <ul id="cart-list" class="list-group col-12">
+                
+            </ul>
+        </section>
+    </main>
+    <footer class="container-fluid py-3 text-white">
+        <div class="container">
+            <p>&copy; product Store 2024. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
